@@ -4,9 +4,7 @@ module.exports = function(electronApp, menuState) {
   return [{
     label: 'Generate IDs',
     accelerator: 'CommandOrControl+G',
-    enabled: function() {
-      return true;
-    },
+    enabled: () => menuState.bpmn,
     action: function() {
       electronApp.emit('menu:action', 'generateIDs');
     }
