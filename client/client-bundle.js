@@ -900,7 +900,7 @@ function parse(html, doc) {
   }
 
   // wrap map
-  var wrap = map[tag] || map._default;
+  var wrap = Object.prototype.hasOwnProperty.call(map, tag) ? map[tag] : map._default;
   var depth = wrap[0];
   var prefix = wrap[1];
   var suffix = wrap[2];
